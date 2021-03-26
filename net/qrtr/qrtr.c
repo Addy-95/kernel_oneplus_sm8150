@@ -740,7 +740,7 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
 		cb->dst_node = le32_to_cpu(v1->dst_node_id);
 		cb->dst_port = le32_to_cpu(v1->dst_port_id);
 
-		size = le32_to_cpu(v1->size);
+	        size = le32_to_cpu(v1->size);
 		break;
 	case QRTR_PROTO_VER_2:
 		v2 = data;
@@ -767,7 +767,7 @@ int qrtr_endpoint_post(struct qrtr_endpoint *ep, const void *data, size_t len)
 
 	if (cb->dst_port == QRTR_PORT_CTRL_LEGACY)
 		cb->dst_port = QRTR_PORT_CTRL;
-
+		
 	if (len != ALIGN(size, 4) + hdrlen)
 		goto err;
 
