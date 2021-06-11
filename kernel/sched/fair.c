@@ -8335,7 +8335,6 @@ static int find_energy_efficient_cpu(struct sched_domain *sd,
 			return GOLD_PLUS_CPU;
 	}
 #endif
-
 	if (trace_sched_task_util_enabled())
 		start_t = sched_clock();
 
